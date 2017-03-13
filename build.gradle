@@ -80,3 +80,4 @@ asciidoctor {
     inputs.dir(snippetsDir)
     dependsOn test
 }
+

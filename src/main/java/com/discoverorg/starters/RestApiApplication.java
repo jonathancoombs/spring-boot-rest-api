@@ -1,11 +1,10 @@
 package com.discoverorg.starters;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableAutoConfiguration
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class RestApiApplication {
 
 	public static void main(String[] args) {
