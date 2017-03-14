@@ -28,6 +28,7 @@ public class UserRepositoryTests extends TestBase {
         UserEntity userEntity = userReadOnlyRepository.findById(51300);
         assertThat(userEntity).isNotNull();
         assertThat(userEntity.getFirstName()).isEqualTo("Jonathan");
+        assertThat(userEntity.getActiveTo()).isEqualTo("2018-06-01");
     }
 
     @Test
