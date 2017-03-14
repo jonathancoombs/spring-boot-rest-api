@@ -1,15 +1,15 @@
-package com.discoverorg.starters.repository;
+package com.discoverorg.core.repository;
 
-import com.discoverorg.starters.TestBase;
-import com.discoverorg.starters.entity.UserEntity;
-import com.discoverorg.starters.repository.readonly.UserReadOnlyRepository;
-import com.discoverorg.starters.repository.readwrite.UserReadWriteRepository;
+import com.discoverorg.core.entity.UserEntity;
+import com.discoverorg.core.repository.readonly.UserReadOnlyRepository;
+import com.discoverorg.core.repository.readwrite.UserReadWriteRepository;
+import com.discoverorg.IntegrationTestBase;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserRepositoryTests extends TestBase {
+public class UserRepositoryTests extends IntegrationTestBase {
     private UserReadOnlyRepository userReadOnlyRepository;
     private UserReadWriteRepository userReadWriteRepository;
 

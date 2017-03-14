@@ -1,6 +1,6 @@
-package com.discoverorg.starters.repository.readwrite;
+package com.discoverorg.core.repository.readwrite;
 
-import com.discoverorg.starters.entity.UserEntity;
+import com.discoverorg.core.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

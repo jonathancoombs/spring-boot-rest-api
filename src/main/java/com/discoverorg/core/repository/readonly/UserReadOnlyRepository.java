@@ -1,6 +1,6 @@
-package com.discoverorg.starters.repository.readonly;
+package com.discoverorg.core.repository.readonly;
 
-import com.discoverorg.starters.entity.UserEntity;
+import com.discoverorg.core.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -12,7 +12,7 @@ public class UserReadOnlyRepository {
         this.userReadOnlyMapper = userReadOnlyMapper;
     }
 
-    public UserEntity findById(int id) {
+    public UserEntity findById(long id) {
         return userReadOnlyMapper.selectById(id);
     }
 }

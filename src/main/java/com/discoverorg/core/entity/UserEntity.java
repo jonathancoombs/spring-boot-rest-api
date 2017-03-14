@@ -1,9 +1,8 @@
-package com.discoverorg.starters.entity;
+package com.discoverorg.core.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class UserEntity implements Serializable {
+public class UserEntity {
     private Long id;
     private Byte state;
     private String username;

@@ -1,4 +1,4 @@
-package com.discoverorg.starters.config;
+package com.discoverorg.core.config.datasource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(
-        basePackages = "com.discoverorg.starters.repository.readonly"
+        basePackages = "com.discoverorg.core.repository.readonly"
 )
 public class ReadOnlyDatasourceConfig {
     public static final String SQL_SESSION_FACTORY_NAME = "readOnlySessionFactory";
@@ -33,8 +33,10 @@ public class ReadOnlyDatasourceConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(readOnlyDatasource());
+        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
+        sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
 
-        return sqlSessionFactoryBean.getObject();
+        return sqlSessionFactory;
     }
 
 }

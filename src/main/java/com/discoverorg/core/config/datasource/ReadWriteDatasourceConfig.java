@@ -1,4 +1,4 @@
-package com.discoverorg.starters.config;
+package com.discoverorg.core.config.datasource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(
-        basePackages = "com.discoverorg.starters.repository.readwrite"
+        basePackages = "com.discoverorg.core.repository.readwrite"
 )
 public class ReadWriteDatasourceConfig {
     public static final String PROPERTIES_PREFIX = "spring.datasource.readwrite";

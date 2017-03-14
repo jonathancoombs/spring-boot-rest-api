@@ -1,6 +1,6 @@
 package com.discoverorg.starters.services;
 
-import com.discoverorg.starters.repository.UserRepository;
+import com.discoverorg.core.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

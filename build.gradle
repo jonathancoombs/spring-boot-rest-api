@@ -18,6 +18,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'war'
+apply plugin: 'jacoco'
 
 war {
 	baseName = 'rest-api'
@@ -44,12 +45,8 @@ dependencies {
 //	compile('org.springframework.boot:spring-boot-starter-data-rest')
 //	compile('org.springframework.boot:spring-boot-starter-hateoas')
 //	compile('org.liquibase:liquibase-core')
-//    compile('org.mybatis:mybatis')
 	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.2.0')
     compile('mysql:mysql-connector-java')
-//    compile('org.springframework.boot:spring-boot-starter-jdbc') {
-//        exclude(module: 'tomcat-jdbc')
-//    }
 //    compile('com.zaxxer:HikariCP:2.6.0'){
 //        exclude(module: 'tools')
 //    }
@@ -82,3 +79,15 @@ asciidoctor {
     dependsOn test
 }
 
+jacoco {
+    toolVersion = "0.7.8"
+    reportsDir = file("$buildDir/jacoco")
+}
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.enabled true
+        html.destination "${buildDir}/jacoco/jacocoHtml"
+    }
+}
