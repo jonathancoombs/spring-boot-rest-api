@@ -38,7 +38,9 @@ public class RestDocumentation {
 
     @Before
     public void setUp() {
-        this.documentationHandler = document("{method-name}",
+        RestDocumentationResultHandler documentationHandler;
+
+        documentationHandler = document("{method-name}",
                 preprocessRequest(prettyPrint()),
                 preprocessResponse(prettyPrint()));
 
